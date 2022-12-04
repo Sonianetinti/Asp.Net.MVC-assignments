@@ -1,0 +1,20 @@
+﻿@model  Ado.netmvcAssignment.Models.FootballLeague
+@{
+    ViewBag.Title = "Add";
+}
+<h1 style="background-color:greenyellow;">FootBallLeague</h1>
+<h2>Add</h2>
+@using (Html.BeginForm("AddMatchResult", "Home"))
+{
+    <p>MatchId : @Html.TextBoxFor(a=> a.MatchId)</p>
+    <p>TeamName1 : @Html.TextBoxFor(a => a.TeamName1)</p>
+    <p>TeamName2: @Html.TextBoxFor(a => a.TeamName2)</p>
+    string[] s = { "Win", "Draw" };
+    SelectList list= new SelectList(s);
+    <p>Status: @Html.DropDownList("DropdownList",list, "select")</p>
+    <p>Points : @Html.TextBoxFor(a=> a.Points)</p>
+    <p>WinningTeam : @Html.TextBoxFor(a => a.WinningTeam)</p>
+    <input type="submit" value="AddMatchResult" />
+}
+
+
